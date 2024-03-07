@@ -1,10 +1,10 @@
 local wall = {}
 
-function wall.load(obj)
-  obj.visible = false
+function wall:load()
+  self.visible = false
 end
 
-function wall.update(obj, p)
+function wall:update(p)
   
 end
 
