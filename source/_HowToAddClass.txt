@@ -1,0 +1,5 @@
+To add a new class of object, add a new lua file to the class directory with the name of the class. Then add the new file to the Class table in object.lua.
+
+The new file must contain an update function. The first argument is the instance of the object being acted on. The second is the table of private functions from object.lua, which is how instances interact with other instances. This is what object.lua will call every frame.
+
+Object.lua takes care of drawing the object instances. The class files contain game logic.

@@ -1,0 +1,167 @@
+{
+  "name": "Template-Project",
+  "ogmoVersion": "3.4.0",
+  "levelPaths": ["."],
+  "backgroundColor": "#282c34ff",
+  "gridColor": "#3c4049cc",
+  "anglesRadians": true,
+  "directoryDepth": 5,
+  "layerGridDefaultSize": {"x": 16, "y": 16},
+  "levelDefaultSize": {"x": 320, "y": 240},
+  "levelMinSize": {"x": 128, "y": 128},
+  "levelMaxSize": {"x": 4096, "y": 4096},
+  "levelValues": [],
+  "defaultExportMode": ".json",
+  "compactExport": false,
+  "externalScript": "",
+  "playCommand": "",
+  "entityTags": ["object"],
+  "layers": [
+    {
+      "definition": "tile",
+      "name": "tile",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "82202335",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "labyrinth"
+    },
+    {
+      "definition": "tile",
+      "name": "solid",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "82862922",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "solid"
+    },
+    {
+      "definition": "entity",
+      "name": "object",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "82657001",
+      "requiredTags": [],
+      "excludedTags": []
+    }
+  ],
+  "entities": [
+    {
+      "exportID": "82654763",
+      "name": "jellyfishStill",
+      "limit": -1,
+      "size": {"x": 32, "y": 32},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 32, "y": 32},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": ["object"],
+      "values": [],
+      "texture": "../image/spr_jellyfishStill.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA6ElEQVRYR2NkwANW3nv9H588sXLhSqKMuNRilaCWxeiWYnMIigNoZTE+h8AdQC/LYY6BhQbYAfS2HNkRjANlOcwRow4YDQGMXADKHucevQCXgEZyEijlBC5xkFpi9SAnepBdWEtCcizC5Qh8ZoH0YDiAkAZyHIdPz/B3AKEQpXkIDD0HkJKl0KtZbL4lOQTIdQCx5QC6o0kqB8jJgvg8hLUcgLmQ1OAk13E4G4vUdAC+UCApCshNH6MOICkEyE1MhFI7LnNJKooJFSrkOH5kOICk9gC5cUluFqVLOUByCODrdpNb6eAyEwD4QIVlrEQTZQAAAABJRU5ErkJgggAA"
+    },
+    {
+      "exportID": "82774222",
+      "name": "jellyfishMove",
+      "limit": -1,
+      "size": {"x": 32, "y": 32},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": ["object"],
+      "values": [],
+      "texture": "../image/spr_jellyfishMove.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA10lEQVRYR+2X3Q2AIAyE7Rou4Aju4aDu4Qgu4BoYSCSIbYUL/gYfQbmPo1eVGuUy42S0+dQ5GnqS7mUnSgnHohzIDuAqYQ3EA9wlvsFsbjiAu8VDCHpK3ENUgOpAnAIbDzMvrgNS1+77hDDu1kh8JnTcavGdEBCSICQwn4K4S509oM2nuhBqHhz4HcDZhi534HsAOZFKKeBsB1AAJAGu13CfSshiSDxFAKSpvBpAO9asI0DrowJkOYAWkyZSAR53QDvWYjFEI1oMAC1e8beZe0egu5TWsuMrZMKFedGkNksAAAAASUVORK5CYIIA"
+    },
+    {
+      "exportID": "83124451",
+      "name": "lilly",
+      "limit": -1,
+      "size": {"x": 32, "y": 32},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 32, "y": 32},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": ["object"],
+      "values": [],
+      "texture": "../image/spr_lillyR.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAaNJREFUWIXtlj1ugzAUx/8pvUUmSzkCIwsXsO/AyIjkC1TqZImRseoV8AXSIVPFEbpyDOQOxNQ25sMJTTLkLyG+nv1++L3nB/DUUxuKUqru6lx9valQiJetQeoiDlqJ160BtFwIKeXu3wFOUYqkOwLoV8IUA5QPwhuCa5PJda6f+eYdAVBKFef8YohTlM6CufNaIdDOtxQrGwvA1QBgOhdCTCZNqKqqGq5bAFWVAUY+jEKwpXOf9t+tdT8CCK1jn+bygH2+Wx84hOD8UCWeOK2RHg8AnHOcohSEEABAnueu3SBvGc6tAqVUmYcHAkIIa4zOA19orSqQUu4YoOoiRl3EYOcvcuH0EifdcWRjvtfK8/yyndCdLOmOlnMfUIhzYKEZuc7nbNz3U/ZBALfQ4wFIKXfm9nmN9j8f4QCmzDi6sV66X6vJKmBlM+7pw8r0579qb+A2MfPf4CKAuojBygac9xOxslnqEUoDcT69FbvaLAk1XF3EEEI8RhnONaWbAKzR3QEmk7A9ZAAaEELQgkBn/pL0uPaQgaywn8zqtf/11477BU0l1M12mNXNAAAAAElFTkSuQmCC"
+    }
+  ],
+  "tilesets": [
+    {"label": "labyrinth", "path": "../image/tile_labyrinth.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABqklEQVRoQ+1YwY2EMAyEcpCogONLGVsLggauDyiBLyUg8doffeydIwVlUYKJHTagdT6AHDseT2yHpEVRvJIbjxQAVFVFgjAMg9Kj6pMWNZRg/RVAWZZKVNe106HtHBOAlmE2qE7b7AcHAOCbptkNAgfA1v4bAB3NvS2xnXMpBiiRMQGY4M7IC5v9Nwa4ACj6XB0BcKkySqHzqwBgfQKT2wIctA9gDIKDe30Ck18CgHbC1u3ZDHAbGcYA1icwOcoA5oDLwBlN66gvaw4cVXDNi3oa/X2+WP8D/eMn7nFaABxkAKsymNyZxJ9iAKvzmPwSAE7pA59iAKvzmDw6A9xSLQBcEZQ+wNhb6igRKokpddzHd+e9UEgAUe6FQgLYq/M+0bbNPZ0BSh33AeW8FwrFgI8zoeYGS+JQDlHspMuysP4H2ralrLvqTNOUdF2XzPOcZFmmnjD0+ziO6htyAN71U28pBUArmYp6BdOoTd73fQJO6JHnudc36AmA2zPA2cTRc+A/GVQSY3vdJYfuC8N375vzWTkgAGIzIH1A+oA0spufhaSMxi6jd2fgD8RkTN2y4xxiAAAAAElFTkSuQmCC", "tileWidth": 16, "tileHeight": 16, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0},
+    {"label": "solid", "path": "../image/tile_wall.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAbSURBVDhPY/i/7iRJaFQDMWhUAzFo0GlYdxIAIZt2H8VAgwsAAAAASUVORK5CYII=", "tileWidth": 16, "tileHeight": 16, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+  ]
+}
