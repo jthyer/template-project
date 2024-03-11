@@ -1,11 +1,16 @@
-local function wall(start_x,start_y)  
+local function wall(c,start_x,start_y)  
   local public = {}
   
-  local x, y = start_x, start_y
-  local sprite = { nil, 16, 16 }
+  local class, x, y = c, start_x, start_y
+  local hitbox = { 
+    x = x,
+    y = y,
+    width = 16,
+    height = 16,
+  }
   
-  function public.get_x() return x end
-  function public.get_y() return y end
+  public.solid = true
+  function public.hitbox() return hitbox end
   function public.getSolidWidth() return 16 end
   function public.getSolidHeight() return 16 end
   

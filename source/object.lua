@@ -5,8 +5,8 @@ local objectDeathFlag = {}
 local itrID
 
 local new = {}
-new.jellyfishStill = require("source.class.jellyfishStill")
-new.jellyfishMove = require("source.class.jellyfishMove")
+new.jellyfishStill = require("source.class.jellyfish")
+new.jellyfishMove = require("source.class.jellyfish")
 new.wall = require("source.class.wall")
 new.player = require("source.class.player")
 
@@ -30,7 +30,7 @@ end
 
 local function newObject(c,x,y)
   local obj = {}
-  obj = new[c](x,y,checkObjects)
+  obj = new[c](c,x,y,checkObjects)
   return obj
 end
 
@@ -53,10 +53,8 @@ end
 function object.draw()
   for i,obj in ipairs(objectTable) do
     if obj.getSprite ~= nil then
-      love.graphics.draw(obj.getSprite(),obj.get_x(),obj.get_y())
-    else
-      --for debugging
-      love.graphics.rectangle("fill",obj.get_x(),obj.get_y(),16,16)
+      local x, y, sprite = obj.drawInfo()
+      love.graphics.draw(sprite,x,y)
     end
   end
 end
