@@ -21,6 +21,13 @@ local function checkObjects(f)
   return false
 end
 
+local function getID()
+  local returnID = itrID
+  itrID = itrID + 1
+  
+  return returnID
+end
+
 local function newObject(c,x,y)
   local obj = {}
   obj = new[c](x,y,checkObjects)
@@ -46,56 +53,12 @@ end
 function object.draw()
   for i,obj in ipairs(objectTable) do
     if obj.getSprite ~= nil then
-      love.graphics.draw(obj.getSprite()[1],obj.get_x(),obj.get_y())
+      love.graphics.draw(obj.getSprite(),obj.get_x(),obj.get_y())
     else
       --for debugging
       love.graphics.rectangle("fill",obj.get_x(),obj.get_y(),16,16)
     end
   end
-end
-
-
---[[
-function private.checkCollisionWalls(x,y,w,h)
-  -- iterates through object array checking for collision
-  -- against any walls 
-  for i,obj in ipairs(objectTable) do
-    if obj.class == "wall" and util.checkOverlap(x,y,w,h,
-      obj.x,obj.y,obj.width,obj.height) then
-      return true
-    end
-  end
-  
-  return false
-end
-
-function private.checkCollisionCeil(x,y,w,h)
-  for i,obj in ipairs(objectTable) do
-    if obj.class == "wall" and  y > obj.y and util.checkOverlap(x,y,w,h,
-        obj.x,obj.y,obj.width,obj.height) then
-      return true
-    end
-  end
-  
-  return false
-end
-
-function private.checkCollisionFloor(x,y,w,h)
-  for i,obj in ipairs(objectTable) do
-    if obj.class == "wall" and  y <= obj.y and util.checkOverlap(x,y,w,h,
-        obj.x,obj.y,obj.width,obj.height) then
-      return true
-    end
-  end
-  
-  return false
-end--]]
-
-local function getID()
-  local returnID = itrID
-  itrID = itrID + 1
-  
-  return returnID
 end
 
 return object

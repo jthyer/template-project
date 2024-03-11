@@ -6,17 +6,20 @@ local function player(start_x,start_y,checkObjects)
   local public = {}
   
   local x, y = start_x, start_y
-  local width, height = 32, 32
-  local sprite = { global.getAsset("sprite","lillyR"),32,32 }
+  local sprite = global.getAsset("sprite","lillyR")
   local hspeed, vspeed = 0, 0
   
-  local function checkCollisionWalls(check_x,check_y,floorOnly,ceilOnly)
+  local hitbox = {}
+  hitbox.solid = {x=8,y=8,width=16,height=24}
+  
+  local function checkCollisionWalls(check_x,check_y,checkWidth,checkHeight,
+    floorOnly,ceilOnly)
     local function f(obj) 
       local collision = false
       if obj.getSolidWidth ~= nil and 
         (floorOnly == nil or y <= obj.get_y()) and
         (ceilOnly == nil or y > obj.get_y()) and
-        util.checkOverlap(check_x,check_y,sprite[2],sprite[3],
+        util.checkOverlap(check_x,check_y,checkWidth,checkHeight,
           obj.get_x(),obj.get_y(),obj.getSolidWidth(),obj.getSolidHeight()) then
         collision = true
       end
@@ -36,7 +39,8 @@ local function player(start_x,start_y,checkObjects)
     end
   
     local new_x = x + hspeed
-    local collide_x = checkCollisionWalls(new_x,y)
+    local collide_x = checkCollisionWalls(new_x+hitbox.solid.x,y+hitbox.solid.y,
+      hitbox.solid.width,hitbox.solid.height)
     if not collide_x then
       x = new_x
     else
@@ -45,7 +49,8 @@ local function player(start_x,start_y,checkObjects)
   end
   
   local function vertMovement()
-    local grounded = checkCollisionWalls(x,y+1,true)
+    local grounded = checkCollisionWalls(x+hitbox.solid.x,y+hitbox.solid.y+1,
+      hitbox.solid.width,hitbox.solid.height,true)
   
     if grounded then
       if kb.jumpPressed() then
@@ -56,10 +61,10 @@ local function player(start_x,start_y,checkObjects)
     end  
 
     local new_y = y + vspeed
-    local collide_y_floor = checkCollisionWalls(x,new_y,
-      true,nil)
-    local collide_y_ceil = checkCollisionWalls(x,new_y,
-      nil,true)
+    local collide_y_floor = checkCollisionWalls(x+hitbox.solid.x,new_y+hitbox.solid.y+1,
+      hitbox.solid.width,hitbox.solid.height,true)
+    local collide_y_ceil = checkCollisionWalls(x+hitbox.solid.x,y+hitbox.solid.y+1,
+      hitbox.solid.width,hitbox.solid.height,nil,true)
     
     if not (collide_y_floor or collide_y_ceil) then
       y = new_y

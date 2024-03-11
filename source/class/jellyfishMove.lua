@@ -4,7 +4,7 @@ local function jellyfishMove(start_x,start_y)
   local public = {}
   
   local x, y = start_x, start_y
-  local sprite = { global.getAsset("sprite","jellyfishMove"),32,32 }  
+  local sprite = global.getAsset("sprite","jellyfishMove")
   
   function public.update() 
     x = x + HSPEED
