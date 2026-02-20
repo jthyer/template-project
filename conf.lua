@@ -1,4 +1,6 @@
+local window = require("core.window")
+
 function love.conf(t)
-    t.window.width = 640
-    t.window.height = 480
+  t.window.width = window.WINDOW_WIDTH
+  t.window.height = window.WINDOW_HEIGHT
 end
